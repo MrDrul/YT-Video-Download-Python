@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>YT-V-D</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="eel.js"></script>
+	<link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<div class="box">
+ <form action="#">
+	<input type="text" id="URL" placeholder="URL"><br>
+	<input type="text" id="Download" placeholder="Download"> <br>
+
+<form>
+<form action="#">
+  <label for="n1">Choose a method :</label>
+  <select name="choose" id="n1">
+    <option value="mp4">Mp4</option>
+    <option value="mp3">Mp3</option>
+    <option value="b">Both</option>
+  </select><br>
+  	<input type="submit" id="btn" value="Download">
+</form>
+</div>
+<script>
+
+	let btn = document.querySelector("#btn");
+	btn.addEventListener("click", sendData);
+
+	async function sendData() {
+		let URL = document.querySelector("#URL").value;
+		let Download = document.querySelector("#Download").value;
+		let Type = document.querySelector("#n1").value;
+
+		await eel.yes_voch(URL, Download, Type);
+	}
+
+
+</script>
+
+</body>
+</html>
